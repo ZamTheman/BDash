@@ -45,7 +45,7 @@ namespace MineSweeper
         {
             foreach (Keys key in keys)
             {
-                if (currentKeyState.IsKeyDown(key) && previousKeyState.IsKeyDown(key))
+                if (currentKeyState.IsKeyDown(key))
                     return true;
             }
             return false;

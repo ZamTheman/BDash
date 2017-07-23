@@ -1,0 +1,15 @@
+MineSweeper/obj/
+MineSweeper/bin/WindowsUniversal/x86/Debug/AppX/resources.pri
+MineSweeper/bin/WindowsUniversal/x86/Debug/AppX/WinMetadata/Windows.winmd
+MineSweeper/bin/WindowsUniversal/x86/Debug/AppX/vs.appxrecipe
+MineSweeper/bin/WindowsUniversal/x86/Debug/AppxManifest.xml
+MineSweeper/bin/WindowsUniversal/x86/Debug/BDash.build.appxrecipe
+MineSweeper/bin/WindowsUniversal/x86/Debug/Content/DefaultFont.xnb
+MineSweeper/bin/WindowsUniversal/x86/Debug/Content/Sprites/Hero/AlienSpriteSheet.xnb
+MineSweeper/bin/WindowsUniversal/x86/Debug/Core/AppxManifest.xml
+MineSweeper/bin/WindowsUniversal/x86/Debug/GamePage.xbf
+MineSweeper/bin/WindowsUniversal/x86/Debug/AppX/AppxManifest.xml
+MineSweeper/bin/WindowsUniversal/x86/Debug/AppX/Content/DefaultFont.xnb
+MineSweeper/bin/WindowsUniversal/x86/Debug/AppX/Content/Sprites/Hero/AlienSpriteSheet.xnb
+MineSweeper/bin/WindowsUniversal/x86/Debug/AppX/Load/Player.xml
+MineSweeper/bin/WindowsUniversal/x86/Debug/App.xbf

@@ -36,8 +36,8 @@ namespace MineSweeper
 
         public SpriteSheetEffect()
         {
-            AmountOfFrames = new Vector2 (3,4);
-            CurrentFrame = new Vector2(1, 0);
+            AmountOfFrames = new Vector2 (4,4);
+            CurrentFrame = new Vector2(0, 1);
             SwitchFrame = 100;
             FrameCounter = 0;
         }
@@ -58,13 +58,19 @@ namespace MineSweeper
             if (image.IsActive)
             {
                 FrameCounter += (int)gameTime.ElapsedGameTime.TotalMilliseconds;
-                if(FrameCounter >= SwitchFrame)
+                if (FrameCounter >= SwitchFrame)
                 {
                     FrameCounter = 0;
-                    CurrentFrame.
+                    CurrentFrame.X = 0;
+
+                    if (CurrentFrame.X * FrameWidth >= image.Texture.Width)
+                        CurrentFrame.X = 0;
                 }
-                    
             }
+            else
+                CurrentFrame.X = 1;
+
+            image.SourceRect = new Rectangle((int)CurrentFrame.X * FrameWidth, (int)CurrentFrame.Y * FrameHeight, FrameWidth, FrameHeight);
         }
         
     }

@@ -13,13 +13,32 @@ namespace MineSweeper
 {
     public class Player
     {
+        private enum moveDirection
+        {
+            None,
+            Up,
+            Down,
+            Right,
+            Left
+        }
+        
+        private moveDirection nextMove;
+        private moveDirection oldDirection;
+        bool[] isPressed; // 0 = Up, 1 = Down, 2 = Right, 3 = Left
+        List<moveDirection> lastPressed;
         public Image Image;
         public Vector2 Velocity;
         public float MoveSpeed;
+        double timeSinceMove;
+        int tileSize = 32;
 
         public Player()
         {
             Velocity = Vector2.Zero;
+            nextMove = moveDirection.None;
+            oldDirection = moveDirection.None;
+            isPressed = new bool[4];
+            lastPressed = new List<moveDirection> { moveDirection.None };
         }
 
         public void LoadContent()
@@ -32,40 +51,71 @@ namespace MineSweeper
             Image.UnloadContent();
         }
 
-        double timeSinceMove;
-        int tileSize = 32;
+        private void RemoveFromLastClicked(moveDirection direction)
+        {
+            if(lastPressed != null && lastPressed.Count > 0)
+            {
+                for (int i = 0; i < lastPressed.Count; i++)
+                    if (lastPressed[i] == direction)
+                        lastPressed.RemoveAt(i);
+            }
+        }
+
+        private void AddToLastClicked(moveDirection direction)
+        {
+            if (!lastPressed.Any(d => d == direction))
+                lastPressed.Add(direction);
+        }
+
         public void Update(GameTime gameTime)
         {
             timeSinceMove += gameTime.ElapsedGameTime.TotalMilliseconds;
-             
+            // Image.IsActive = true;
+
+            if (InputManager.Instance.KeyDown(Keys.Up))
+                AddToLastClicked(moveDirection.Up);
+            else
+                RemoveFromLastClicked(moveDirection.Up);
+
+            if (InputManager.Instance.KeyDown(Keys.Down))
+                AddToLastClicked(moveDirection.Down);
+            else
+                RemoveFromLastClicked(moveDirection.Down);
+
+            if (InputManager.Instance.KeyDown(Keys.Right))
+                AddToLastClicked(moveDirection.Right);
+            else
+                RemoveFromLastClicked(moveDirection.Right);
+
+            if (InputManager.Instance.KeyDown(Keys.Left))
+                AddToLastClicked(moveDirection.Left);
+            else
+                RemoveFromLastClicked(moveDirection.Left);
+            
             if(timeSinceMove > MoveSpeed)
             {
-                if (Velocity.X == 0)
+                switch (lastPressed[lastPressed.Count - 1])
                 {
-                    if (InputManager.Instance.KeyDown(Keys.Down))
-                    {
-                        Image.Position.Y += tileSize;
-                    }
-                    else if (InputManager.Instance.KeyDown(Keys.Up))
-                    {
+                    case moveDirection.None:
+                        break;
+                    case moveDirection.Up:
                         Image.Position.Y -= tileSize;
-                    }
-                }
-
-                if (Velocity.Y == 0)
-                {
-                    if (InputManager.Instance.KeyDown(Keys.Right))
-                    {
+                        break;
+                    case moveDirection.Down:
+                        Image.Position.Y += tileSize;
+                        break;
+                    case moveDirection.Right:
                         Image.Position.X += tileSize;
-                    }
-                    else if (InputManager.Instance.KeyDown(Keys.Left))
-                    {
+                        break;
+                    case moveDirection.Left:
                         Image.Position.X -= tileSize;
-                    }
+                        break;
+                    default:
+                        break;
                 }
                 timeSinceMove = 0;
             }
-            
+            Image.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)
