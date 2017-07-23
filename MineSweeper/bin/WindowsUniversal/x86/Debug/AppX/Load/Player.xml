@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Player>
-    <Image>
-        <Path>Sprites/Hero</Path>
-    </Image>
-    <MoveSpeed>250</MoveSpeed>
-</Player>

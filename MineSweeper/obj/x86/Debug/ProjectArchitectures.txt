@@ -1,1 +1,0 @@
-C:\Users\samue\OneDrive\Dokument\Visual Studio 2015\Projects\MineSweeper\MineSweeper\MineSweeper.csproj;x86
