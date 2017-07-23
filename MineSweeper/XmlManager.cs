@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 using System.IO;
 using Windows.Storage;
 
-namespace MineSweeper
+namespace BDash
 {
     public class XmlManager<T>
     {

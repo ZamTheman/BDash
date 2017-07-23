@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace MineSweeper
+namespace BDash
 {
     public class Player
     {
@@ -22,9 +22,6 @@ namespace MineSweeper
             Left
         }
         
-        private moveDirection nextMove;
-        private moveDirection oldDirection;
-        bool[] isPressed; // 0 = Up, 1 = Down, 2 = Right, 3 = Left
         List<moveDirection> lastPressed;
         public Image Image;
         public Vector2 Velocity;
@@ -35,15 +32,13 @@ namespace MineSweeper
         public Player()
         {
             Velocity = Vector2.Zero;
-            nextMove = moveDirection.None;
-            oldDirection = moveDirection.None;
-            isPressed = new bool[4];
             lastPressed = new List<moveDirection> { moveDirection.None };
         }
 
         public void LoadContent()
         {
             Image.LoadContent();
+            Image.IsActive = true;
         }
 
         public void UnloadContent()
@@ -70,7 +65,7 @@ namespace MineSweeper
         public void Update(GameTime gameTime)
         {
             timeSinceMove += gameTime.ElapsedGameTime.TotalMilliseconds;
-            // Image.IsActive = true;
+            
 
             if (InputManager.Instance.KeyDown(Keys.Up))
                 AddToLastClicked(moveDirection.Up);
@@ -97,6 +92,7 @@ namespace MineSweeper
                 switch (lastPressed[lastPressed.Count - 1])
                 {
                     case moveDirection.None:
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 0;
                         break;
                     case moveDirection.Up:
                         Image.Position.Y -= tileSize;
@@ -105,9 +101,11 @@ namespace MineSweeper
                         Image.Position.Y += tileSize;
                         break;
                     case moveDirection.Right:
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 1;
                         Image.Position.X += tileSize;
                         break;
                     case moveDirection.Left:
+                        Image.SpriteSheetEffect.CurrentFrame.Y = 2;
                         Image.Position.X -= tileSize;
                         break;
                     default:

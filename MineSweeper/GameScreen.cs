@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace MineSweeper
+namespace BDash
 {
     public class GameScreen
     {
@@ -21,7 +21,7 @@ namespace MineSweeper
         public GameScreen()
         {
             Type = this.GetType();
-            XmlPath =  "Load/" + Type.ToString().Replace("MineSweeper.", "") + ".xml";
+            XmlPath =  "Load/" + Type.ToString().Replace("BDash.", "") + ".xml";
         }
 
         public virtual void LoadContent()

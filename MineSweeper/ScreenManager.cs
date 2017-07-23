@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Content;
 using System.Xml.Serialization;
 using System.IO;
 
-namespace MineSweeper
+namespace BDash
 {
     public class ScreenManager
     {
@@ -47,14 +47,15 @@ namespace MineSweeper
         public ScreenManager()
         {
             Dimensions = new Vector2(1024, 768);
-            currentScreen = new SplashScreen();
+            //currentScreen = new SplashScreen();
+            currentScreen = new GameplayScreen();
             xmlGameScreenManager = new XmlManager<GameScreen>();
             xmlGameScreenManager.Type = currentScreen.Type;
-            currentScreen = xmlGameScreenManager.Load("Load/SplashScreen.xml");
+            //currentScreen = xmlGameScreenManager.Load("Load/SplashScreen.xml");
         }
         public void ChangeScreens(string ScreenName)
         {
-            newScreen = (GameScreen)Activator.CreateInstance(Type.GetType("MineSweeper." + ScreenName));
+            newScreen = (GameScreen)Activator.CreateInstance(Type.GetType("BDash." + ScreenName));
             Image.IsActive = true;
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0;

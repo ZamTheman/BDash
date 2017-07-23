@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 
-namespace MineSweeper
+namespace BDash
 {
     public class SpriteSheetEffect : ImageEffect
     {
@@ -61,7 +61,7 @@ namespace MineSweeper
                 if (FrameCounter >= SwitchFrame)
                 {
                     FrameCounter = 0;
-                    CurrentFrame.X = 0;
+                    CurrentFrame.X ++;
 
                     if (CurrentFrame.X * FrameWidth >= image.Texture.Width)
                         CurrentFrame.X = 0;

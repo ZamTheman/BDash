@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace MineSweeper
+namespace BDash
 {
     public class Image
     {
@@ -57,7 +57,7 @@ namespace MineSweeper
                 (effect as ImageEffect).LoadContent(ref obj);
             }
             
-            effectList.Add(effect.GetType().ToString().Replace("MineSweeper.", ""), (effect as ImageEffect)); 
+            effectList.Add(effect.GetType().ToString().Replace("BDash.", ""), (effect as ImageEffect)); 
         }
 
         public void ActivateEffect(string effect)

@@ -8,6 +8,6 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SwapChainPanel" />
-    <RootType FullName="MineSweeper.GamePage" />
+    <RootType FullName="BDash.GamePage" />
   </Roots.RootTypes>
 </Roots>

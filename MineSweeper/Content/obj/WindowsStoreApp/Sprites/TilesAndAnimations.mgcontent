@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/Sprites/Hero/AlienSpriteSheet.png</SourceFile>
-  <SourceTime>2017-07-16T22:27:27.2479863+02:00</SourceTime>
-  <DestFile>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/bin/WindowsStoreApp/Sprites/Hero/AlienSpriteSheet.xnb</DestFile>
-  <DestTime>2017-07-23T21:45:00.4728335+02:00</DestTime>
+  <SourceFile>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/Sprites/TilesAndAnimations.png</SourceFile>
+  <SourceTime>2017-07-23T21:40:12.259309+02:00</SourceTime>
+  <DestFile>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/bin/WindowsStoreApp/Sprites/TilesAndAnimations.xnb</DestFile>
+  <DestTime>2017-07-23T21:45:00.4818584+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2016-03-30T08:36:08+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
