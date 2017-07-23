@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ScreenManager>
+    <Image>
+        <Path>NewScreen/SingleBlackPixel</Path>
+        <Effects>FadeEffect</Effects>
+        <Scale>
+            <X>1024</X>
+            <Y>768</Y>
+        </Scale>
+    </Image>    
+</ScreenManager>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Map>
+    <Row>1, 1, 1, 1, 1, 1, 1, 1, 1, 1</Row>
+    <Row>1, 1, 1, 1, 1, 1, 1, 1, 1, 1</Row>
+    <Row>1, 1, 1, 1, 1, 1, 1, 1, 1, 1</Row>
+    <Row>1, 1, 1, 1, 1, 1, 1, 1, 1, 1</Row>
+    <Row>1, 1, 1, 1, 1, 1, 1, 1, 1, 1</Row>
+    <Row>1, 1, 1, 1, 1, 1, 1, 1, 1, 1</Row>
+    <Row>1, 1, 1, 1, 1, 1, 1, 1, 1, 1</Row>
+    <Row>1, 1, 1, 1, 1, 1, 1, 1, 1, 1</Row>
+    <Row>1, 1, 1, 1, 1, 1, 1, 1, 1, 1</Row>
+    <Row>1, 1, 1, 1, 1, 1, 1, 1, 1, 1</Row>
+
+    <TypeMatch>1, "Mud.png"</TypeMatch>
+    <TypeMatch>2, "Stone.png"</TypeMatch>
+    <TypeMatch>3, "Diamond.png"</TypeMatch>
+</Map>

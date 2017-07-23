@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>WindowsStoreApp</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/samue/OneDrive/Dokument/Visual Studio 2015/Projects/MineSweeper/MineSweeper/Content/SplashScreen/SplashScreen.png</File>
+    <File>C:/Users/samue/OneDrive/Dokument/Visual Studio 2015/Projects/MineSweeper/MineSweeper/Content/Sprites/Diamond.png</File>
+    <File>C:/Users/samue/OneDrive/Dokument/Visual Studio 2015/Projects/MineSweeper/MineSweeper/Content/Sprites/Hero.png</File>
+    <File>C:/Users/samue/OneDrive/Dokument/Visual Studio 2015/Projects/MineSweeper/MineSweeper/Content/Sprites/Mud.png</File>
+    <File>C:/Users/samue/OneDrive/Dokument/Visual Studio 2015/Projects/MineSweeper/MineSweeper/Content/Sprites/Stone.png</File>
+    <File>C:/Users/samue/OneDrive/Dokument/Visual Studio 2015/Projects/MineSweeper/MineSweeper/Content/DefaultFont.spritefont</File>
+    <File>C:/Users/samue/OneDrive/Dokument/Visual Studio 2015/Projects/MineSweeper/MineSweeper/Content/NewScreen/SingleBlackPixel.png</File>
+  </SourceFiles>
+</SourceFileCollection>
