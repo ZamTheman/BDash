@@ -1,24 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Map>
-    <TileDimenstions>
+    <TileDimensions>
         <X>32</X>
         <Y>32</Y>
-    </TileDimenstions>
+    </TileDimensions>
     <Layer>
         <Image>
             <Path>Sprites\TilesAndAnimations</Path>
         </Image>
+        <TileTypes>Wall:w,Bush:b,Player:p,Rocket:r,Stone:s,Gas:g</TileTypes>
+        <Solid>w,s</Solid>
+        <Consumable>b,g</Consumable>
+        <Falling>s</Falling>
+        <Pushable>s</Pushable>
+        <Animated>p,g</Animated>
+        <SpriteSheetPosition>w:2:2,b:0:2,s:1:2,r:0:0,g:0:1</SpriteSheetPosition>
+        <!--<TileMap>
+            <Row>[w][w][w][w][w][w][w][w][w][w]</Row>
+            <Row>[w][s][p][e][s][e][e][e][g][w]</Row>
+            <Row>[w][w][w][w][w][w][e][w][g][w]</Row>
+            <Row>[w][e][e][e][e][b][w][e][g][w]</Row>
+            <Row>[w][g][e][e][e][s][s][s][g][w]</Row>
+            <Row>[w][g][s][s][e][e][s][e][x][w]</Row>
+            <Row>[w][b][b][b][s][s][s][s][s][w]</Row>
+            <Row>[w][e][b][b][e][s][s][e][s][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][s][w]</Row>
+            <Row>[w][w][w][w][w][w][w][w][w][w]</Row>
+        </TileMap>-->
         <TileMap>
-            <Row>[2:2][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
-            <Row>[0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
-            <Row>[0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
-            <Row>[0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
-            <Row>[0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
-            <Row>[0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
-            <Row>[0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
-            <Row>[0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
-            <Row>[0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
-            <Row>[0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0][0:0]</Row>
+            <Row>[w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w]</Row>
+            <Row>[w][p][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][b][s][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][b][s][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][b][s][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][b][s][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][g][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][g][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][b][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][b][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][b][e][e][e][e][e][e][e][e][e][e][w]</Row>
+            <Row>[w][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][e][b][e][e][e][e][e][e][e][e][e][e][x][w]</Row>
+            <Row>[w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w]</Row>
         </TileMap>
     </Layer>
 </Map>

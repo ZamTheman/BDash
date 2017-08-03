@@ -14,21 +14,23 @@ namespace BDash
     {
         [XmlElement("Layer")]
         public List<Layer> Layer;
-        public Vector2 TileDimenstions;
+        public Vector2 TileDimensions;
 
 
         public Map()
         {
             Layer = new List<Layer>();
-            TileDimenstions = Vector2.Zero;
+            TileDimensions = Vector2.Zero;
         }
 
-        public void LoadContent()
+        public Vector2 LoadContent(Player player, List<Collectable> collectables, Spaceship spaceship)
         {
+            Vector2 mapSize = Vector2.Zero;
             foreach (var l in Layer)
             {
-                l.LoadContent(TileDimenstions);
+                mapSize = l.LoadContent(TileDimensions, player, collectables, spaceship);
             }
+            return mapSize;
         }
 
         public void UnloadContent()
@@ -39,11 +41,11 @@ namespace BDash
             }
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, ref Player player, List<Collectable> collectables)
         {
             foreach (var l in Layer)
             {
-                l.Update(gameTime);
+                l.Update(gameTime, ref player, collectables);
             }
 
         }

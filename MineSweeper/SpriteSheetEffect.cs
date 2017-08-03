@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using System.IO;
 
 namespace BDash
 {
     public class SpriteSheetEffect : ImageEffect
     {
-        public int FrameCounter;
+        public double FrameCounter;
         public int SwitchFrame;
         public Vector2 CurrentFrame;
         public Vector2 AmountOfFrames;
@@ -57,7 +58,7 @@ namespace BDash
             base.Update(gameTime);
             if (image.IsActive)
             {
-                FrameCounter += (int)gameTime.ElapsedGameTime.TotalMilliseconds;
+                FrameCounter += gameTime.ElapsedGameTime.TotalMilliseconds;
                 if (FrameCounter >= SwitchFrame)
                 {
                     FrameCounter = 0;

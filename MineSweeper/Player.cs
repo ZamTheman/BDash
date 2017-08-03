@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace BDash
 {
-    public class Player
+    public class Player : SpriteBase
     {
         private enum moveDirection
         {
@@ -23,50 +23,19 @@ namespace BDash
         }
         
         List<moveDirection> lastPressed;
-        public Image Image;
-        public Vector2 Velocity;
+        public Vector2 OldPosition;
         public float MoveSpeed;
         double timeSinceMove;
-        int tileSize = 32;
 
         public Player()
         {
-            Velocity = Vector2.Zero;
             lastPressed = new List<moveDirection> { moveDirection.None };
         }
-
-        public void LoadContent()
-        {
-            Image.LoadContent();
-            Image.IsActive = true;
-        }
-
-        public void UnloadContent()
-        {
-            Image.UnloadContent();
-        }
-
-        private void RemoveFromLastClicked(moveDirection direction)
-        {
-            if(lastPressed != null && lastPressed.Count > 0)
-            {
-                for (int i = 0; i < lastPressed.Count; i++)
-                    if (lastPressed[i] == direction)
-                        lastPressed.RemoveAt(i);
-            }
-        }
-
-        private void AddToLastClicked(moveDirection direction)
-        {
-            if (!lastPressed.Any(d => d == direction))
-                lastPressed.Add(direction);
-        }
-
+        
         public void Update(GameTime gameTime)
         {
             timeSinceMove += gameTime.ElapsedGameTime.TotalMilliseconds;
-            
-
+            OldPosition = Image.Position;
             if (InputManager.Instance.KeyDown(Keys.Up))
                 AddToLastClicked(moveDirection.Up);
             else
@@ -113,12 +82,28 @@ namespace BDash
                 }
                 timeSinceMove = 0;
             }
-            Image.Update(gameTime);
+            base.Update(gameTime);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        private void RemoveFromLastClicked(moveDirection direction)
         {
-            Image.Draw(spriteBatch);
+            if (lastPressed != null && lastPressed.Count > 0)
+            {
+                for (int i = 0; i < lastPressed.Count; i++)
+                    if (lastPressed[i] == direction)
+                        lastPressed.RemoveAt(i);
+            }
+        }
+
+        private void AddToLastClicked(moveDirection direction)
+        {
+            if (!lastPressed.Any(d => d == direction))
+                lastPressed.Add(direction);
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            Image.PlayerDraw(spriteBatch);
         }
     }
 }

@@ -100,6 +100,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Camera.cs" />
+    <Compile Include="Collectable.cs" />
     <Compile Include="FadeEffect.cs" />
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
@@ -118,7 +120,9 @@
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenManager.cs" />
+    <Compile Include="Spaceship.cs" />
     <Compile Include="SplashScreen.cs" />
+    <Compile Include="SpriteBase.cs" />
     <Compile Include="SpriteSheetEffect.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TileMap.cs" />
@@ -138,11 +142,15 @@
     <Content Include="Content\map.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Load\Map\Map1.xml" />
+    <Content Include="Load\Collectable.xml" />
+    <Content Include="Load\Map\Map1.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Load\Player.xml" />
     <Content Include="Load\ScreenManager.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Load\Spaceship.xml" />
     <Content Include="Load\SplashScreen.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>

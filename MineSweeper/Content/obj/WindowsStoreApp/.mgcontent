@@ -5,13 +5,11 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/SplashScreen/SplashScreen.png</File>
-    <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/Sprites/Diamond.png</File>
-    <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/Sprites/Hero.png</File>
-    <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/Sprites/Mud.png</File>
-    <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/Sprites/Stone.png</File>
     <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/DefaultFont.spritefont</File>
     <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/NewScreen/SingleBlackPixel.png</File>
     <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/Sprites/Hero/AlienSpriteSheet.png</File>
     <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/Sprites/TilesAndAnimations.png</File>
+    <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/Sprites/GasBarrelSprite.png</File>
+    <File>C:/Users/Samuel/Documents/BDash/MineSweeper/Content/Sprites/SpaceShipSpriteSheet.png</File>
   </SourceFiles>
 </SourceFileCollection>

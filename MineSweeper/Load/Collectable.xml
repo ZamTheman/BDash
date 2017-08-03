@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Collectable>
+    <Image>
+        <Path>Sprites\GasBarrelSprite</Path>
+        <Effects>SpriteSheetEffect</Effects>
+        <EffectSettings>NrFrames:3:1,SwitchFrame:500,StartFrame:0:0</EffectSettings>
+    </Image>
+</Collectable>

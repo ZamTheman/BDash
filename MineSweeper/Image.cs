@@ -19,6 +19,7 @@ namespace BDash
         public Vector2 Scale;
         public Rectangle SourceRect;
         public bool IsActive;
+        public string EffectSettings;
 
         private Texture2D texture;
         public Texture2D Texture
@@ -56,8 +57,35 @@ namespace BDash
                 var obj = this;
                 (effect as ImageEffect).LoadContent(ref obj);
             }
+
+            if (effect.GetType().ToString() == "BDash.SpriteSheetEffect" && EffectSettings != null && EffectSettings != "")
+            {
+                var tempEffect = effect as SpriteSheetEffect;
+                var settings = EffectSettings.Split(',');
+                foreach (var item in settings)
+                {
+                    var setting = item.Split(':');
+                    switch (setting[0])
+                    {
+                        case "NrFrames":
+                            tempEffect.AmountOfFrames = new Vector2(int.Parse(setting[1]), int.Parse(setting[2]));
+                            break;
+                        case "SwitchFrame":
+                            tempEffect.SwitchFrame = int.Parse(setting[1]);
+                            break;
+                        case "StartFrame":
+                            tempEffect.CurrentFrame = new Vector2(int.Parse(setting[1]), int.Parse(setting[2]));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                effectList.Add(effect.GetType().ToString().Replace("BDash.", ""), tempEffect);
+            }
+
+            else
+                effectList.Add(effect.GetType().ToString().Replace("BDash.", ""), (effect as ImageEffect)); 
             
-            effectList.Add(effect.GetType().ToString().Replace("BDash.", ""), (effect as ImageEffect)); 
         }
 
         public void ActivateEffect(string effect)
@@ -175,6 +203,37 @@ namespace BDash
         {
             origin = new Vector2(SourceRect.Width / 2, SourceRect.Height / 2);
             spriteBatch.Draw(texture, Position + origin, SourceRect, 
+                Color.White * Alpha, 0.0f, origin, Scale, SpriteEffects.None, 0.0f);
+        }
+
+        public void TileDraw(SpriteBatch spriteBatch)
+        {
+            origin = new Vector2(SourceRect.Width / 2, SourceRect.Height / 2);
+            spriteBatch.Draw(texture, Position + origin - Camera.Instance.Offset, SourceRect,
+                Color.White * Alpha, 0.0f, origin, Scale, SpriteEffects.None, 0.0f);
+        }
+
+
+        public void PlayerDraw(SpriteBatch spriteBatch)
+        {
+            Vector2 playerDrawPosition = Vector2.Zero;
+
+            if (Position.X < Camera.Instance.ViewSize.X / 2)
+                playerDrawPosition.X = Position.X + origin.X;
+            else if (Position.X + Camera.Instance.ViewSize.X / 2 > Camera.Instance.MapSize.X)
+                playerDrawPosition.X = Camera.Instance.ViewSize.X / 2 + (Position.X - Camera.Instance.Position.X) + SourceRect.Width / 2;
+            else
+                playerDrawPosition.X = Camera.Instance.ViewSize.X / 2 + SourceRect.Width / 2;
+
+            if (Position.Y < Camera.Instance.ViewSize.Y / 2)
+                playerDrawPosition.Y = Position.Y + origin.Y;
+            else if (Position.Y + Camera.Instance.ViewSize.Y / 2 > Camera.Instance.MapSize.Y)
+                playerDrawPosition.Y = Camera.Instance.ViewSize.Y / 2 + (Position.Y - Camera.Instance.Position.Y) + 16;
+            else
+                playerDrawPosition.Y = Camera.Instance.ViewSize.Y / 2 + 16;
+
+            origin = new Vector2(SourceRect.Width / 2, SourceRect.Height / 2);
+            spriteBatch.Draw(texture, playerDrawPosition, SourceRect,
                 Color.White * Alpha, 0.0f, origin, Scale, SpriteEffects.None, 0.0f);
         }
     }
